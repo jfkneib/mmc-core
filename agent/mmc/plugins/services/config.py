@@ -27,6 +27,8 @@ from mmc.support.config import PluginConfig
 class ServicesConfig(PluginConfig):
 
     def readConf(self):
+        logger = logging.getLogger()
+
         PluginConfig.readConf(self)
         self.journalctl_path = self.get('main', 'journalctl_path')
         self.services = {}
